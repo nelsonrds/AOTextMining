@@ -1,0 +1,30 @@
+{
+  "name": "aotextmining",
+  "version": "1.0.0",
+  "description": "AOTextMining",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skullbeef/AOTextMining.git"
+  },
+  "dependencies": {
+    "text-miner": "*",
+    "body-parser": "*",
+    "express": "*",
+    "twitter": "*"
+  },
+  "keywords": [
+    "data",
+    "mining",
+    "ao"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skullbeef/AOTextMining/issues"
+  },
+  "homepage": "https://github.com/skullbeef/AOTextMining#readme"
+}
