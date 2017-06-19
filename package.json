@@ -14,7 +14,9 @@
     "text-miner": "*",
     "body-parser": "*",
     "express": "*",
-    "twitter": "*"
+    "twitter": "*",
+    "path": "*",
+    "moment": "*"
   },
   "keywords": [
     "data",

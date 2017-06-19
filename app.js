@@ -2,6 +2,8 @@ var Twitter = require('twitter');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var path = require('path');
+var moment = require('moment');
 
 
 var client = new Twitter({
@@ -13,6 +15,11 @@ var client = new Twitter({
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', function(req, res){
+  res.sendFile(path.join(__dirname, 'views/index.html'));
+});
 
 
 app.use(function (req, res, next) {
@@ -44,11 +51,13 @@ app.post('/Twitter/getDataFromWords', function(req, res) {
     client.get('search/tweets', {q: word}, function(error, tweets, response) {
         var finalArray = tweets.statuses.map(function(obj) {
             
+            
             var objToReturn = {};
             objToReturn.text = obj.text;
             objToReturn.date = obj.created_at;
             objToReturn.nFavorites = obj.favorite_count;
             objToReturn.nRetweets = obj.retweet_count;
+
 
             var user = {};
             user.ID = obj.user.id;
@@ -63,7 +72,6 @@ app.post('/Twitter/getDataFromWords', function(req, res) {
         res.status(200).json(finalArray);
         return
     });
-
 });
 
 app.listen(3000);
