@@ -1,9 +1,13 @@
 var Twitter = require('twitter');
 var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+var app = require('express')();
 var path = require('path');
 var moment = require('moment');
+var bodyParser = require('body-parser');
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+
+server.listen(80);
 
 
 var client = new Twitter({
@@ -74,6 +78,45 @@ app.post('/Twitter/getDataFromWords', function(req, res) {
     });
 });
 
-app.listen(3000);
+/**
+ * Gets the twitter.com stream from topics
+ */
+
+/*client.stream('statuses/filter', {track: "Portugal"}, function(stream) {
+    stream.on('data', function(event) {
+        // console.log(event && event.text);
+        // console.log("Começa o pedido\n\n");
+        // console.log(event);
+        // console.log("\n\n\n");
+
+        var objToReturn = {};
+        objToReturn.text = event.text;
+        objToReturn.date = event.created_at;
+        objToReturn.nFavorites = event.favorite_count;
+        objToReturn.nRetweets = event.retweet_count;
+
+
+        var user = {};
+        user.ID = event.user.id;
+        user.IDString = event.user.id_str;
+        user.name = event.user.name;
+        user.location = event.user.location;
+        user.img = event.user.profile_image_url;
+        
+        objToReturn.user = user;
+        console.log(objToReturn);
+    });
+ 
+    stream.on('error', function(error) {
+        throw error;
+    });
+});*/
+
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
 
 console.log("Listening on port 3000");

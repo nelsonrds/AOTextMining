@@ -16,7 +16,8 @@
     "express": "*",
     "twitter": "*",
     "path": "*",
-    "moment": "*"
+    "moment": "*",
+    "socket.io": "*"
   },
   "keywords": [
     "data",
