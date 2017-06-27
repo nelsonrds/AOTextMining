@@ -15,16 +15,16 @@ function visInput(data) {
     auxObj.id = idIncremented;
     auxObj.content = "<img src="+obj.user.img+">    "
     auxObj.content += obj.text;
-    console.log(auxObj.content);
+    //console.log(auxObj.content);
     auxObj.start = obj.date;
     idIncremented++;
     return auxObj;
   })
 
-  console.log(items);
+  //console.log(items);
   
   var container = document.getElementById('visualization');
-  var options = {};
+  var options = {autoResize: true};
   var timeline = new vis.Timeline(container, items, options);
   
 }
