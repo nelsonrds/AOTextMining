@@ -4,15 +4,44 @@
   <title>Timeline | Basic demo</title>
 </head>
 <body>
-<div id="visualization"></div>
+  <div class="container">
+  </br>
+  <h2><center> AO - Text Miner</center></h2>
+  <br>
+  <br>
+  <button data-toggle="collapse" class="btn btn-danger" data-target="#demo">Mostrar TimeLine</button>
+  <button data-toggle="collapse" class="btn btn-warning" data-target="#demo2">Mostrar Rede</button>
+
+    <div id="demo" class="collapse">
+      <br>
+      <br>
+      <div class="panel panel-default">
+        <div class="panel-body">
+      <div id="visualization"></div>
+    </div>
+  </div>
+    </div>
+
+    <div id="demo2" class="collapse">
+      <br>
+      <br>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div id="mynetwork"></div>
+        </div>
+      </div>
+    </div>
+
+    <p> <center> developed by: Helder and Nelson to IPVC - Aprendizagem Organizacional - Prof: Jorge Ribeiro </center> </p>
+  </div>
 </body>
 
-<div id="mynetwork"></div>
+
 
 <script src="/socket.io/socket.io.js"></script>
-<script>
-  
-</script>
+
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.20.0/vis.min.js"></script>
@@ -22,4 +51,6 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="javascripts/ioControl.js"></script>
 <script src="javascripts/showNet.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </html>
